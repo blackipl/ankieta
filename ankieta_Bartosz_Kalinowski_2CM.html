@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKIETA</title>
+    <style>
+        #body{
+            background-color: rgb(16, 16, 16); 
+            color: rgb(228, 37, 37);
+
+        }
+        #container{
+            margin: auto;
+
+        }
+        #tytul{
+            width: 1500px;
+            height: 50px;
+            margin: auto;
+            border: solid;
+            text-align: center;
+            background-color: gray;
+            border-color: lightgray;
+            border-radius: 10px;
+            border-width: 10px;
+            color: aliceblue;
+        }
+        #caly{
+            
+            margin: auto;
+            width: 500px;
+        }
+        #imie{
+            text-align: center;
+        }
+        #plec{
+            margin-left: 170px;
+        }
+        #ramka{
+            border-color: pink;
+            margin: auto;
+            width: 500px;
+        }
+        fieldset{
+            border-color: pink;
+
+        }
+        #zarobki, textarea{
+            margin-left: 120px;
+        }
+        #ajdi{
+            display: none;
+        }
+
+    </style>
+    <script>
+
+        function funkcja(){
+            if(document.getElementById("idd").checked){
+                document.getElementById("ajdi").style.display="block"; 
+            }
+            else{
+                document.getElementById("ajdi").style.display="none"; 
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body id="body">
+    <div id="container">
+        <form action="dziekujemy.html">
+            <h1 id="tytul">WYPEŁNIJ KRÓTKĄ ANKIETĘ I ZOSTAŃ MILIONEREM!!!</h1>
+            <fieldset id=ramka>
+            <legend><h3>wprowadź imię i nazwisko</h3></legend>
+            <div id="imie">
+                
+                <table>
+                    <tr>
+                        <td>Podaj swoje nazwisko:</td>
+                        <td><input type="text" name="nazw" value="" size="30"></td>
+                    </tr>
+                    <tr>
+                       <td>Podaj swoje imię:</td>
+                        <td><input type="text" name="im" value="" size="30"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            </div><br>
+            <div id="caly">
+                <fieldset>
+                    <legend><h3>Wybierz płeć</h3></legend>
+                    <div>
+                    
+                        <label><input type="radio" value="kobieta" name="plec">Kobieta</label>
+                        <label><input type="radio" value="mężczyzna" name="plec">Mężczyzna</label>
+                        <label><input type="radio" value="inna" name="plec">Inna</label>
+                    </div>
+                </fieldset>
+            
+                    <br>
+                    <fieldset>
+                    <legend><h3>Wskaż swoje zarobki</h3></legend>
+                    <input list="zarobki" name="zarobki" placeholder="KLIKNIJ">
+                        <datalist id="zarobki">
+                        <option value="1600 zł-2400 zł">
+                        <option value="2500 zł-3900 zł">
+                        <option value="4000 zł-6000 zł">
+                        <option value="powyżej 6000 zł">
+                        </datalist>
+                    </input>
+                    </fieldset>
+            
+                    <div><br>
+                        <fieldset>
+                        <legend><p>Podaj swój adres e-mail:</p></legend>
+                        <input type="email" name="email" value="" size="30" placeholder="WPISZ ADRES EMAIL">
+                        </fieldset>
+                        <fieldset>
+                        <legend><p>Wybierz swoje wykształcenie:</p></legend>
+                        <input type="radio" value="brak" name="wyksztalcenie">brak<br>
+                        <input type="radio" value="podstawowe" name="wyksztalcenie">Podstawowe<br>
+                        <input type="radio" value="średnie" name="wyksztalcenie">Średnie<br>
+                        <input type="radio" value="wyższe" name="wyksztalcenie">Wyższe<br>
+                        </fieldset>
+                        <fieldset>
+                        <legend><p>wybierz języki które znasz:</p></legend>
+                        <select name="jezyki" size="5" multiple>
+                        <option>Język angielski</option>
+                        <option value="Język niemiecki" selected="selected">Język niemiecki</option>
+                        <option value="Język francuski">Język francuski</option>
+                        <option value="Język włoski" selected="selected">Język włoski</option>
+                        <option value="Język rosyjski">Język rosyjski</option>
+                        <option value="Język hiszpański">Język hiszpański</option>
+                        </select>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend><h3>Wybierz systm operacyjny z ktorego korzystasz</h3></legend>
+                            <input type="radio" value="opcja 1" name="system" onclick="funkcja()" checked> Window<br>
+                            <input type="radio" value="opcja 2" name="system" onclick="funkcja()"> MacOS<br>
+                            <input type="radio" value="opcja 3" name="system" onclick="funkcja()"> Linux<br>
+                            <input type="radio" value="opcja 4" name="system" id="idd" onclick="funkcja()"> Inne <input id="ajdi" type="text" name="type = text" value="" size="30"><br>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                        <legend><h3>Pomóż udoskonalić nam stronę i wypisz swoje uwagi dot. niej!</h3></legend>
+                        <textarea name="uwagi" cols="37" rows="7"></textarea>
+                        </fieldset>
+                    </div>
+            
+                    <p><input type="checkbox" name="opcje"> Zgadzam się na przetwarzanie moich danych osobowych</p>
+                        <p id="zarobki">
+                            <input type="submit" value="Wyślij" name="wyslij">
+                            <input type="reset" value="Wyczyść" name="zeruj">
+                        </p>
+            
+                </form>
+            
+            </div>
+
+    </div>
+
+    
+</body>
+</html>
